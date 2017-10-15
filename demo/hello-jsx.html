@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  var HelloComponent = React.createClass({
+    render: function () {
+      return (
+        <h1 style={{color: 'red'}}>
+          Hello React World
+        </h1>
+      )
+    }
+  });
+
+  ReactDOM.render(
+    <HelloComponent />,
+    document.getElementById('root')
+  );
+</script>
+</body>
+</html>

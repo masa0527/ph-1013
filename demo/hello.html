@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var HelloComponent = React.createClass({
+    render: function () {
+      return React.createElement('h1', {style: {color: "red"}}, 'Hello React World!')
+    }
+  });
+
+  ReactDOM.render(
+    React.createElement(HelloComponent),
+    document.getElementById('root')
+  );
+</script>
+</body>
+</html>
