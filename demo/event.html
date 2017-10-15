@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event</title>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  class EventComponent extends React.Component {
+    constructor() {
+      super();
+
+      // 入力された値を保持しておくstate
+      this.state = {
+        val: 'power-h'
+      };
+
+    }
+
+    // テキストボックスの値が変わる度に呼ばれるイベント
+    inputChange(e) {
+      this.setState({val: e.target.value});
+    }
+
+    // ボタン要素クリックイベント
+    btnClick() {
+      this.setState({val: ''});
+    }
+
+    render() {
+      const val = this.state.val;
+      return (
+        <div>
+          <input type="text" onChange={(e) => this.inputChange(e)} value={val}/>
+          <button onClick={() => this.btnClick()}>クリア</button>
+          <hr/>
+          <div>{val}</div>
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(
+    <EventComponent/>,
+    document.getElementById('root')
+  );
+</script>
+</body>
+</html>

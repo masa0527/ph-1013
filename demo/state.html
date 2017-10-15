@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>state</title>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  class StateComponent extends React.Component {
+    constructor() {
+      super();
+
+      this.state = {
+        target: 'power-h'
+      };
+
+    }
+
+    render() {
+      const target = this.state.target;
+      return (
+        <div>
+          <h1>{target}!</h1>
+          <button onClick={() => this.setState({target: 'power-house'})}>ボタン</button>
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(
+    <StateComponent />,
+    document.getElementById('root')
+  );
+</script>
+</body>
+</html>
